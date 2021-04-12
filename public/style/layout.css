@@ -1,0 +1,105 @@
+header div{
+    height: 60%;
+   
+}
+
+header  h2{
+    height: 40%;
+}
+footer{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header {
+    text-align: center;
+}
+main{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr  1fr  1fr;
+    gap: 30px;
+}
+form{
+    width: 80%;
+    display: grid;
+    grid-template-rows: repeat(4,60px);
+    margin: auto;
+}
+
+
+.bookDIV{
+    height: 550px;
+    padding: 20px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 50% 1fr 1fr 4fr;
+  
+    gap: 5px;
+}
+
+.bookDIV img {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    
+}
+.description{
+    
+    overflow:scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.description::-webkit-scrollbar {
+   display: none;
+  }
+
+  .title{
+      height: max-content;
+  }
+  form div label ,input{
+      
+      display: inline-block;
+      margin: auto;
+  }
+  form div{
+      width: 100%;
+  }
+  
+
+  label {
+      width: 80%;
+      text-align: center;
+  }
+  .textInput{
+      width: 100%;
+  }
+
+  @media only screen and (max-width: 600px){
+    main{
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 30px;
+    }
+
+    header{
+        height: 200px;
+    }
+
+    body{
+        display: grid;
+        grid-template-rows: 200px 1fr 50px;
+        gap: 33px;
+    }
+
+  } 
+
