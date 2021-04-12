@@ -1,0 +1,62 @@
+body{
+    background-color: #9B9B9B;
+}
+
+.bookDIV{
+    background-color: #d8d8d8;
+}
+
+.headerofpage{
+    background-color: #4A4A4A;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+header img{
+    background-color: white;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+}
+
+header div{
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    
+    align-items: center;
+}
+
+header div img{
+   position: absolute;
+   top: 0px;
+   right: 0px;
+}
+
+.title{
+    font-size: 25px;
+    color: white;
+    text-shadow:3px 1px  black;
+    
+}
+button{
+    background-color: black;
+    color: white;
+}
+
+.formFooter{
+    position: absolute;
+    bottom: 0;
+}
+
+.indexMain{
+    text-decoration: none;
+    font-size: 128px;
+    color: teal;
+}
