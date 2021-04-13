@@ -6,57 +6,95 @@ body{
     background-color: #d8d8d8;
 }
 
-.headerofpage{
-    background-color: #4A4A4A;
-    width: 100%;
-    color: white;
-    font-size: 30px;
-    letter-spacing: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-header img{
-    background-color: white;
-    border-radius: 50%;
-    height: 70px;
-    width: 70px;
-}
 
-header div{
-    background-color: black;
-    color: white;
-    font-size: 40px;
-    display: flex;
-    
-    align-items: center;
-}
 
-header div img{
-   position: absolute;
-   top: 0px;
-   right: 0px;
-}
+
+
 
 .title{
     font-size: 25px;
+    max-height: 50px;
+    overflow: hidden;
     color: white;
     text-shadow:3px 1px  black;
     
 }
+
 button{
     background-color: black;
     color: white;
 }
 
-.formFooter{
-    position: absolute;
-    bottom: 0;
-}
+
 
 .indexMain{
     text-decoration: none;
     font-size: 128px;
     color: teal;
+}
+i{
+    color: white;
+}
+
+.saveLink{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+.deatails div{
+   
+    padding: 20px;
+   
+    display: grid;
+    text-align: center;
+    grid-template-rows: 30% 1fr 1fr 4fr 1fr 1fr;
+    gap: 10px;
+    background-color: #d8d8d8;
+
+
+}
+
+.deatails div img {
+    
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+.viewDetail{
+    text-decoration: none;
+    background-color: black;
+    color: blanchedalmond;
+    font-size: 25px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mainForm {
+    display: grid;
+    grid-template-rows: 50px 35px 35px 40px;
+    
+gap: 20px;
+}
+
+label{
+    font-size: 25px;
+}
+.addBook{
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.errorImg{
+    margin: auto;
+    height: calc(100vh - 150px);
 }

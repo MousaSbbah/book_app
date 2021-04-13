@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../style/base.css">
     <link rel="stylesheet" href="../style/layout.css">
     <link rel="stylesheet" href="../style/modules.css">
@@ -13,17 +14,14 @@
     <title>Book WIKI</title>
 </head>
 <body>
-    <header><div>
-        <h1> Best Books</h1>
-        <img src="../assest/menu.bmp" alt="">
-    </div>
+  <%- include('../../layout/header')  %> 
 
-    <h2 class="headerofpage">Searching By Title or Author</h2>
-</header>
+
+<h1>Searching By Title or Author</h1>
     <main>
       <div></div>
   
-  <form action="/searches" method="POST">
+  <form action="/searches" method="POST" class="mainForm">
     <input type="text" class='textInput' placeholder="Enter a title or author" name='text' required>
     <div>
 
@@ -44,6 +42,7 @@
 </form>
 </main>
 <footer class="formFooter">&copy; Mousa</footer>
+<script src="../js/app.js"></script>
 
 
 </body>

@@ -4,8 +4,8 @@
 
 body{
     display: grid;
-    grid-template-rows: 20vh 1fr 50px;
-    gap: 33px;
+    grid-template-rows: 100px 50px 1fr 50px;
+    gap: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
