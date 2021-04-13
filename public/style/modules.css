@@ -41,9 +41,14 @@ header div img{
 
 .title{
     font-size: 25px;
+    max-height: 50px;
+    overflow: hidden;
     color: white;
     text-shadow:3px 1px  black;
     
+}
+i {
+    font-style: italic;
 }
 button{
     background-color: black;
@@ -59,4 +64,27 @@ button{
     text-decoration: none;
     font-size: 128px;
     color: teal;
+}
+
+.saveLink{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+.deatails{
+   
+    padding: 20px;
+   
+    display: grid;
+    text-align: center;
+    grid-template-rows: 50% 1fr 1fr 1fr;
+    gap: 5px;
+    background-color: #d8d8d8;
+
+
 }

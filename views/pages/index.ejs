@@ -19,6 +19,15 @@
 
     <h2 class="headerofpage">Welcome </h2>
 </header>
+
+<% arr.forEach(obj => { %>
+    <div class="bookDIV">
+        
+     <img src="<%= obj.image_url%>" alt="">
+     <p class="title" name='aaaa'><%=obj.title%></p>
+     <p class="authors"><i><%=obj.author%></i></p>
+     <p class="description"><%=obj.categories%></p>
+     <% }) %> 
     <main>
 
         <a class='indexMain'href="/searches/new">SEARCH</a>

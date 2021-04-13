@@ -24,11 +24,22 @@
 
 <% booksArr.forEach(obj => { %>
  <div class="bookDIV">
-  <img src="<%= obj.imgURL%>" alt="">
-  <p class="title"><%=obj.title%></p>
-  <p class="authors"><%=obj.authorNames.join(',')%></p>
-  <p class="description"><%=obj.description%></p>
- </div>   
+     
+     <img src="<%= obj.image_url%>" alt="">
+  <p class="title" name='aaaa'><%=obj.title%></p>
+  <p class="authors"><i><%=obj.author%></i></p>
+  <p class="description"><%=obj.categories%></p>
+  <form action="/add" method="POST">
+<input type="hidden" name="title" value="<%=obj.title%>">
+<input type="hidden" name="authors" value="<%=obj.author%>">
+<input type="hidden" name="description" value = "<%=obj.description%>">
+<input type="hidden" name="image_url" value="<%=obj.image_url%>">
+<input type="hidden" name="categories" value="<%=obj.categories%>">
+<input type="hidden" name="isbn" value="<%=obj.isbn%>">
+<input type="submit" value="Add Book ">
+</form>
+ 
+</div>   
     
 <% }); %>
 
