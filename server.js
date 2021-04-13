@@ -24,6 +24,7 @@ server.get('/',homerout)
 server.get('/searches/new',searchPage)
 server.post('/searches',searchSubmit)
 server.post('/add',addBook)
+server.get('/details/:bookID',getDetail)
 
 
 
@@ -43,9 +44,13 @@ function homerout(req,res){
   let SQL = `SELECT * FROM books;`;
   client.query(SQL)
     .then(result=>{
-      res.render('pages/index',{ arr:result.rows});
+      let arr = result.rows;
+      console.log(result.rows)
+      res.render('pages/index',{ booksArray:arr});
     })
-  res.render('pages/index');
+    .catch(err=>{
+      res.render('pages/error')
+    })
 
 }
 function searchPage(req,res){
@@ -67,6 +72,9 @@ function searchSubmit(req,res){
 
 
     })
+    .catch(err=>{
+      res.render('pages/error')
+    })
 }
 function addBook(req,res){
   let bookData = req.body;
@@ -76,8 +84,22 @@ function addBook(req,res){
   console.log(safeValues);
   client.query(SQL,safeValues)
     .then(val=>{
-      res.render('pages/books/show.ejs',{bookObject:val.rows[0]})
+      res.redirect(`/details/${val.rows[0].id}`)
 
+    })
+    .catch(err=>{
+      res.render('pages/error')
+    })
+}
+
+function getDetail(req,res){
+  let bookID = req.params.bookID;
+  let SQL = `SELECT * FROM books WHERE id=$1;`;
+  let safeValue = [bookID]
+  client.query(SQL,safeValue)
+    .then(result=>{
+      console.log(result.rows);
+      res.render('pages/books/show',{bookObject:result.rows[0]})
     })
 }
 
@@ -85,6 +107,9 @@ function addBook(req,res){
 
 
 
+server.get('*',(req,res)=>{
+  res.render('pages/error')
+})
 
 client.connect()
   .then(() => {

@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/base.css">
     <link rel="stylesheet" href="./style/layout.css">
     <link rel="stylesheet" href="./style/modules.css">
@@ -13,13 +14,8 @@
     <title>Book WIKI</title>
 </head>
 <body>
-    <header><div>
-        <h1> Best Books</h1>
-        <img src="./assest/menu.bmp" alt="">
-    </div>
-
-    <h2 class="headerofpage">Search Result</h2>
-</header>
+    <%- include('../../layout/header')  %> 
+<h1>SEARCH RESULT</h1>
     <main>
 
 <% booksArr.forEach(obj => { %>
@@ -27,8 +23,8 @@
      
      <img src="<%= obj.image_url%>" alt="">
   <p class="title" name='aaaa'><%=obj.title%></p>
-  <p class="authors"><i><%=obj.author%></i></p>
-  <p class="description"><%=obj.categories%></p>
+  <p class="authors"><%=obj.author%></p>
+  <p class="description"><%=obj.description%></p>
   <form action="/add" method="POST">
 <input type="hidden" name="title" value="<%=obj.title%>">
 <input type="hidden" name="authors" value="<%=obj.author%>">
@@ -36,7 +32,7 @@
 <input type="hidden" name="image_url" value="<%=obj.image_url%>">
 <input type="hidden" name="categories" value="<%=obj.categories%>">
 <input type="hidden" name="isbn" value="<%=obj.isbn%>">
-<input type="submit" value="Add Book ">
+<input type="submit" value="Add Book " class="addBook">
 </form>
  
 </div>   
@@ -46,6 +42,7 @@
 
 </main>
 <footer>aaaaaaaaaaa</footer>
+<script src="../js/app.js"></script>
 
 
 </body>

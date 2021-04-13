@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/base.css">
     <link rel="stylesheet" href="./style/layout.css">
     <link rel="stylesheet" href="./style/modules.css">
@@ -12,28 +13,23 @@
     <title>Book WIKI</title>
 </head>
 <body>
-    <header><div>
-        <h1> Best Books</h1>
-        <img src="../assest/menu.bmp" alt="">
-    </div>
-
-    <h2 class="headerofpage">Welcome </h2>
-</header>
-
-<% arr.forEach(obj => { %>
+    <%- include('../layout/header')  %> 
+<h1> (<%= booksArray.length %>) Saved Books </h1>
+<main>
+    
+    <% booksArray.forEach(obj => { %>
     <div class="bookDIV">
         
      <img src="<%= obj.image_url%>" alt="">
-     <p class="title" name='aaaa'><%=obj.title%></p>
-     <p class="authors"><i><%=obj.author%></i></p>
-     <p class="description"><%=obj.categories%></p>
+     <p class="title"><%=obj.title%></p>
+     <p class="authors"><%=obj.author%></p>
+     <a class="viewDetail" href="/details/<%= obj.id %> ">View details</a>
+     </div>
      <% }) %> 
-    <main>
-
-        <a class='indexMain'href="/searches/new">SEARCH</a>
 
 </main>
 
-<footer class="formFooter">&copy; Mousa</footer>
+<footer>&copy; Mousa</footer>
+<script src="./js/app.js"></script>
 </body>
 </html>
