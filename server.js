@@ -23,29 +23,18 @@ server.post('/searches',(req,res)=>{
   let searchText = req.body.text;
   let searchType = req.body.searchType;
 
-  if (searchType === 'title'){
-    superagent.get(`https://www.googleapis.com/books/v1/volumes?q=intitle:${searchText}`)
-      .then(data =>{
-        let booksData = data.body.items;
-        let arrBookOBJ = booksData.map(val=>{
-          return new Book(val);
-        })
-        res.render('pages/searches/show',{booksArr:arrBookOBJ});
-
-
+  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=in${searchType}:${searchText}`)
+    .then(data =>{
+      let booksData = data.body.items;
+      let arrBookOBJ = booksData.map(val=>{
+        return new Book(val);
       })
-  }else if (searchType==='author'){
-    superagent.get(`https://www.googleapis.com/books/v1/volumes?q=inauthor:${searchText}`)
-      .then(data =>{
-        let booksData = data.body.items;
-        let arrBookOBJ = booksData.map(val=>{
-          return new Book(val);
-        })
-        res.render('pages/searches/show',{booksArr:arrBookOBJ});
+      console.log(arrBookOBJ);
+      res.render('pages/searches/show',{booksArr:arrBookOBJ});
 
-      })
 
-  }
+    })
+
 })
 
 function Book (data){
@@ -55,8 +44,8 @@ function Book (data){
   }else{
     this.imgURL ='https://i.imgur.com/J5LVHEL.jpg';
   }
-  this.authorNames =data.volumeInfo.authors;
-  this.description =data.volumeInfo.description;
+  this.authorNames =data.volumeInfo.authors || ['Unkown'];
+  this.description =data.volumeInfo.description || 'The description is not available for this book';
 }
 
 
