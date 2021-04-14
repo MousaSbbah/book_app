@@ -24,3 +24,5 @@ The best Book is a search engin for books by using google books api and you can 
 12/4/2021 : Build the search engin by using EJS and API  
 
 13/4/2021 : Connect the app to database for saving the books
+
+14/4/2021 : add to button in book details page for update the data inside data base or delete the book from data base 

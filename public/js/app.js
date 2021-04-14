@@ -9,3 +9,8 @@ function myFunction() {
     x.style.display = 'block';
   }
 }
+
+
+$('.updateBtn').on('click',()=>{
+  $('.updateForm').toggle();
+})

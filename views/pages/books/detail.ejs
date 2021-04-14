@@ -7,6 +7,16 @@
     <p class="description"><%=bookObject.description%></p>
     <p class="isbn"><%=bookObject.isbn%></p>
     <p class="categories">Book Shelf : <%=bookObject.categories%></p>
+   <section class="btnDivv">
+
+       <button class='updateBtn'>Update</button>
+       <form action="/deleteBook/<%=bookObject.id%>?_method=delete" method="post">
+        <button class="deleteBtn">Delete The Book</button>
+    
+    </form>
+
+   </section>
 </div> 
+
 
 </section>
