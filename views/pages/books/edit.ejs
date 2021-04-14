@@ -1,0 +1,14 @@
+<form action="/updateDetails/<%=bookObject.id%>?_method=put" method="POST" class="updateForm" style="display: none;">
+
+    <label for="">Book Title</label>
+    <input type="text" name="title" value="<%=bookObject.title%>">
+    <label for="">The Authors</label>
+    <input type="text" name="authors" value="<%=bookObject.author%>">
+    <label for="">BookShelf</label>
+    <input type="text" name="categories" value="<%=bookObject.categories%>">
+    <label for="">ISBN </label>
+    <input type="text" name="isbn" value="<%=bookObject.isbn%>">
+    <label for="">Description</label>
+    <textarea type="text" cols="30" rows="10" name="description" value = "<%=bookObject.description%>"><%=bookObject.description%></textarea>
+    <input type="submit" value="Save The Changes" class="addBook">
+    </form>

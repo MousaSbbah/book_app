@@ -52,11 +52,23 @@ i{
    
     display: grid;
     text-align: center;
-    grid-template-rows: 30% 1fr 1fr 4fr 1fr 1fr;
+    grid-template-rows: 30% 50px 25px 1fr 25px 25px 100px;
     gap: 10px;
     background-color: #d8d8d8;
 
 
+}
+.btnDivv{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.updateBtn{
+
+width: 40%;
+height: 40px;
 }
 
 .deatails div img {
@@ -97,4 +109,27 @@ label{
 .errorImg{
     margin: auto;
     height: calc(100vh - 150px);
+}
+
+.updateForm{
+    width: 100%;
+    margin: auto;
+}
+.updateForm input{
+    height: 35px;
+    width: 100%;
+    margin: 6px;
+    margin: auto;
+}
+textarea{
+    width: 100%;
+}
+.updateForm label{
+    margin-top: 25px;
+}
+
+.deleteBtn{
+    background-color: rgb(116, 17, 17);
+    width: 100%;
+    height: 40px;
 }
